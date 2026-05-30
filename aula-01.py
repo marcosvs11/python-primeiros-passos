@@ -1,0 +1,18 @@
+nome = input('Qual é o seu nome? -> ')
+print(f'Olá, {nome}! É um prazer te receber aqui, seja bem-vindo e aproveite!')
+enter = input('Esse foi o desafio 01 - CONCLUÍDO. Digite enter para continuar: ')
+print()
+print('Vamos descobrir quando você nasceu!')
+dia = input('Informe o dia em que nasceu: ')
+mes = input('Informe o mês: ')
+ano = int(input('E o ano: '))
+idade = 2026 - ano
+print(f'{nome}, você nasceu no dia {dia} de {mes} do ano {ano}, logo a sua idade é de {idade} anos até o fim do ano!')
+enter = input('Esse foi o desafio 02 - CONCLUÍDO. Digite enter para continuar: ')
+print()
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite outro número: '))
+soma = n1 + n2
+print(f'{n1} + {n2} = {soma}')
+print()
+print('Parabéns, você terminou com os desafios da primeira aula! Boa sorte na caminhada...')

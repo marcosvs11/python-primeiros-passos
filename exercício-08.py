@@ -16,7 +16,7 @@ while(resp != 'n'):
         print(f'{med} Metros para Milímetros: {mm:.2f}')
         print()
         resp = input('Quer tentar com outro número? (s/n): ')
-        if (resp.lower != 's'):
+        if (resp.lower() != 's'):
             print('Saindo...')
             break
     except ValueError:

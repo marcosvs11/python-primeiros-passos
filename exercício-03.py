@@ -1,0 +1,6 @@
+algo = input ('Digite algo: ')
+print(f'O tipo desse algo é {type(algo)}')
+print(f'É um número? {algo.isnumeric()}')
+print(f'É escrito somente com espaços? {algo.isspace()}')
+print(f'Foi escrito somente com letras minúsculas? {algo.islower()}')
+print(f'Foi escrito somente com letras maiúsculas? {algo.isupper()}')

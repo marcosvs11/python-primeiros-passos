@@ -9,7 +9,7 @@ while(resp != 'n'):
         n1 = int(input('Digite a tabuada desejada: '))
         for i in range(1, 11):
             mult = n1 * i
-            print(f'{n1} X {i} = {mult}')
+            print(f'{n1} X {i:2} = {mult}')
         resp = input('Quer tentar com outro número? (s/n): ')
         if (resp.lower() != 's'):
             print('Saindo...')

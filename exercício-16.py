@@ -1,11 +1,18 @@
 import random
+sep = 30*'='
+tit = 'Quem Vai Limpar o Quadro?'.center(30, ' ')
+quant = int(input('Quantos nomes vão participar do sorteio? -> '))
+nomes = [''] * quant
 resp = 's'
+print(sep)
+print(tit)
+print(sep)
+for i in range(quant):
+    nomes[i] = input(f'Digite o nome {[i+1]}: ')
+print()
+print(f'O nome de quem vai limpar o quadro é: {random.choice(nomes).upper()}')
 while resp != 'n':
-    nomes = ['Marcos', 'Giovanni', 'Annelise', 'Aline', 'João Victor', 'Alan', 'Laryssa']
-    print('Sorteador de Nomes'. center(30, ' '))
-    enter  = input('Digite "ENTER" para começar: ')
-    ale = random.choice(nomes)
-    print(f'Você sorteou: {ale}')
-    resp = input('Quer sortear o próximo? (s/n): ')
-    if resp != 's':
-        break
+    resp = input('Quer sortear novamente? (s/n): ')
+    if resp == 's':
+        print(f'O nome de quem vai limpar o quadro é: {random.choice(nomes).upper()}')
+print('Saindo...')

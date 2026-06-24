@@ -1,0 +1,5 @@
+n1 = input('Digite um número: ')
+print(f'Milhar: {n1[0]}')
+print(f'Centena: {n1[1]}')
+print(f'Dezena: {n1[2]}')
+print(f'Milhar: {n1[3]}')

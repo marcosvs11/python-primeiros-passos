@@ -1,11 +1,4 @@
-import sys
-
-try:
-    import pygame
-except ImportError:
-    print("O módulo pygame não está instalado. Instale com 'pip install pygame' e tente novamente.")
-    sys.exit(1)
-
+import pygame # type: ignore
 pygame.mixer.init()
 pygame.mixer.music.load('/home/marcosvieira/Projetos/Python/python-primeiros-passos/audioteste.mp3')
 pygame.mixer.music.play()

@@ -1,0 +1,7 @@
+frase = input('Um ditado popular qualquer: ')
+atotal = frase.lower().count('a')
+começa = frase.lower().find('a')
+ultima = frase.lower().rfind('a')
+print(f'O total de letra {"a"} na frase é: {atotal + 1}')
+print(f'A primeira vez que essa letra aparace é na: {começa + 1}ª caracter.')
+print(f'E a última vez é na: {ultima + 1}ª caracter.')

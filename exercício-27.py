@@ -1,5 +1,6 @@
 from random import randint
 resp = 's'
+esco = randint(0, 5)
 while resp != 'n':
     sep = 30*'='
     tit = 'Que Número Estou Pensando?'.center(30, ' ')
@@ -7,15 +8,28 @@ while resp != 'n':
     print(tit)
     print(sep)
     print('DICA: Entre 0 e 5.')
-    esco = randint(0, 5)
     tent = int(input('Digite o número: '))
+    dist = abs(esco - tent)
     if tent == esco:
         print('Parabéns, você acertou o número!')
-        break
-    else:
-        print('Vish...Parece que você adivinhou o número incorreto!')
-        print(f'O número que estava pensando era o {esco}.')
-        resp = input(('Quer tentar novamente? (s/n): ')).strip()
-        if resp.lower() != 's':
-            print('Ah, que pena...Achei que você iria conseguir acertar!')
+        resp = input('Quer tentar novamente? (s/n): ')
+        esco = randint(0, 5)
+        if resp != 's':
+            print('Espero que tenha gostado!')
+            print('Saindo...')
             break
+    else:
+        if dist > 4:
+            temp = 'Está gelado...'
+        elif dist == 3 or dist == 2:
+            temp = 'Está tão perto...'
+        elif dist == 1:
+            temp = 'Está quentíssimo...'
+        
+        if tent < esco:
+            direc = 'É um número maior.'
+        elif tent > esco:
+            direc = 'É um número menor.'
+
+        print(temp)
+        print(direc)

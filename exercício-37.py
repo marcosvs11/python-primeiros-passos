@@ -1,24 +1,28 @@
 from time import sleep
 sep = 30 * '='
-tit = 'Quem é o Maior?'.center(30, ' ')
+tit = 'Conversão Numérica'.center(30, ' ')
 resp = 's'
 while resp != 'n':
     try:
         print(sep)
         print(tit)
         print(sep)
-        n1 = int(input('Digite o primeiro número: '))
-        n2 = int(input('Digite o segundo número: '))
-        print('Em análise...')
-        sleep(2)
-        if n1 > n2:
-            print(f'O primeiro número é maior que o segundo, ou seja, {n1} > {n2}.')
-        elif n2 > n1:
-            print(f'O segundo número é maior que o primeiro, ou seja, {n2} > {n1}.')
-        elif n1 == n2:
-            print(f'Tanto o primeiro número quanto o segundo, possuem o mesmo valor!')
-        sleep(2)
-        resp = input('Quer tentar novamente com números diferentes? (s/n): ').strip()
+        num = int(input('Digite um número inteiro: '))
+        print('1 - Converter para BINÁRIO')
+        print('2 - Converter OCTAL')
+        print('3 - Converter HEXADECIMAL')
+        opcao = int(input('Escolha um tipo de conversão: '))
+        if opcao == 1:
+            conversao = bin(num)
+            escolhido = 'binário'
+        elif opcao == 2:
+            conversao = oct(num)
+            escolhido = 'octal'
+        elif opcao == 3:
+            conversao = hex(num)
+            escolhido = 'hexadecimal'
+        print(f'O número {num} convertido para {escolhido} é igual a {conversao[2:]}')
+        resp = input('Deseja outra opção de conversão: (s/n): ').strip()
         if resp.lower() != 's':
             print('Saindo...')
             break

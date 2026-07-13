@@ -9,5 +9,5 @@ for i in range(5):
 # dois if independentes para não ter interferência.
     if peso < peso_menor:
         peso_menor = peso
-print(f'MAIOR: {peso_maior:.2f}')
-print(f'MENOR: {peso_menor:.2f}')
+print(f'Maior peso lido: {peso_maior:.2f}KG.')
+print(f'Menor peso lido: {peso_menor:.2f}KG.')

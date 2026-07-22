@@ -1,3 +1,4 @@
+# Sem querer, acabei realizando o exercício 66 também.
 from time import sleep
 n1 = 0
 cont = 1
@@ -7,9 +8,11 @@ tit = 'Somando Valores'.center(30, ' ')
 print(sep)
 print(tit)
 print(sep)
+# Condição de parada para o usuário.
 while n1 != 999:
     try:
         n1 = int(input(f'Escolha o {cont}° número (digite 999 para sair): '))
+        # Dessa forma, o flag não entra na contagem e nem na soma.
         if n1 != 999:
             soma += n1
             cont += 1

@@ -4,38 +4,37 @@ while True:
     jogador = {}
     gols = []
 
-    # Nome (aceita qualquer non-empty)
+    # Nome não aceita vazio
     while True:
-        nome = input('Digite o nome do jogador: ').strip()
-        if nome:
-            jogador['nome'] = nome
-            break
-        print('Nome vazio. Digite um nome válido.')
+        jogador['nome'] = input('Digite o nome do jogador: ').strip()
+        if jogador['nome'] == '':
+            print('Nome vazio. Digite um nome válido.')
+            continue
+        break
 
     # Quantidade de partidas (inteiro >= 0)
     while True:
         try:
-            partidas = int(input('Quantidade de partidas jogadas: '))
-            if partidas < 0:
+            jogador['partidas'] = int(input('Quantidade de partidas jogadas: '))
+            if jogador['partidas'] < 0:
                 print('Digite um número inteiro não negativo.')
                 continue
             break
         except ValueError:
             print('Entrada inválida. Digite um número inteiro.')
 
-    jogador['partidas'] = partidas
     total = 0
 
     # Gols por partida (cada um inteiro >= 0)
-    for i in range(partidas):
+    for i in range(jogador['partidas']):
         while True:
             try:
-                g = int(input(f'Gols marcados na partida {i+1}: '))
-                if g < 0:
+                gols.append(int(input(f'Gols marcados na partida {i+1}: ')))
+                if gols[-1] < 0:
                     print('Digite um número de gols não negativo.')
+                    gols.pop()
                     continue
-                gols.append(g)
-                total += g
+                total += gols[-1]
                 break
             except ValueError:
                 print('Entrada inválida. Digite um número inteiro.')
@@ -63,13 +62,11 @@ print(60 * '-')
 
 # Consulta de estatísticas por jogador
 while True:
-    entrada = input('Digite o código do jogador (999 para sair): ').strip()
     try:
-        codigo = int(entrada)
+        codigo = int(input('Digite o código do jogador (999 para sair): '))
     except ValueError:
         print('ERRO! Digite um código numérico.')
         continue
-
     if codigo == 999:
         print('DESLIGANDO...')
         break
@@ -81,7 +78,7 @@ while True:
     print(60 * '-')
     print(f"ESTATÍSTICA DO {jogador['nome'].upper()}".center(60))
     print(60 * '-')
-    if not jogador.get('gols'):
+    if not jogador['gols']:
         print('Este jogador não disputou partidas.'.center(60))
     else:
         for i, gol in enumerate(jogador['gols']):

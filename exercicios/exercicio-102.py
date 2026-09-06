@@ -34,8 +34,7 @@ while True:
     break
 
 resp = str(input('Quer visualizar as operações? (S/N): ')).strip().upper()
-if resp == 'S':
-    mostrar = True
+mostrar = resp == 'S'
 
 resultado = fatorial(num, mostrar)
 
